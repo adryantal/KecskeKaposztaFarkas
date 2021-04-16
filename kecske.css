@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+body{
+    background: lightcyan;
+    box-sizing: border-box;
+     
+}
+
+main, header, footer, article, aside{
+    border: 1px solid plum;
+    border-radius: 5px;
+   color: purple;
+   font-family:  "Calibri", serif;
+   
+
+}
+
+main, header, aside{
+    padding: 10px;
+}
+
+/*Szerkezet*/
+
+main{
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "h h h h h"
+        "b a a a j"
+        "f f f f f"; 
+    grid-gap: 10px;
+}
+
+
+header{
+    display: grid;
+    grid-area: h;
+}
+
+#bal{
+    display: grid;
+    grid-area: b;
+    
+}
+
+
+#jobb{
+    display: grid;
+    grid-area: j;
+    
+
+}
+
+
+article{
+    display: grid;
+    grid-area: a;
+    
+    place-content: center;
+}
+
+footer{
+    display: grid;
+    grid-area: f;
+}
+
+
+
+/*Formázás*/
+
+main{
+    box-shadow: 2px 2px 8px #d6bcd6;
+}
+
+header h1{
+    text-shadow: 1px 2px 3px plum;
+    background:   lavenderblush;
+    border: 0.5px solid lavender;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 2px plum;
+}
+
+aside h2{
+    box-shadow: 1px 1px 2px plum;
+    border: 0.5px solid lavender;
+    border-radius: 5px;
+    text-shadow: 1px 2px 3px plum;    
+}
+
+.img_style{
+    width: 80px;
+    padding: 5px;    
+    display: flex;   
+    place-self: center;
+    border: 2pt solid transparent;
+}
+
+
+.p_formaz{    
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    place-self: center;
+    width: 90px;
+    height: 300px;
+}
+
+
+.aside_formaz{
+    text-align: center;
+    background: lavenderblush;   
+}
+
+.szoveg_kozepre{
+    text-align: center;
+}
+
+
+.keszito_neve{
+    text-align: center;
+    font-style: italic;
+    background: plum;
+    color: purple;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.kiemel{
+
+    border: 2pt solid red;
+    filter: drop-shadow(0 0 0.5rem crimson);
+    cursor: grab;
+
+
+}
+
+/*.kep_eltuntet {
+    display: none;
+}*/
+
+
+article div{
+    position: relative;
+    z-index: 0;
+}
+
+.kep_csonakba {
+    width: 18%;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    z-index: 1;
+}
+
+.ablak {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    right: 0%;
+    background: rgba(204,183,250, 0.8);
+    border: 1px solid purple;
+    border-radius: 5px;
+    display: flex;
+    justify-items: center;    
+    color: purple;    
+}
+
+.ablak p{
+    padding: 5px;
+    text-align: center;
+}
+
+.gomb {
+    border-radius: 5px;
+    background: lightblue;
+    box-shadow: 1px 1px 2px purple;
+    width: 20%;
+    transition: 1s all;
+    transition-property: background, color;
+}
+
+
+.gomb:hover{
+    background: rgba(255,240,245,0.5);
+    color: fuchsia;
+}
+
+@media screen and (max-width: 765px) {
+  main{
+    width: 100%;    
+    display: grid;
+    grid-template-areas:
+        "h h h"
+        "b b b"
+        "a a a"
+        "j j j"
+        "f f f "; 
+    grid-gap: 10px;
+}
+    
+aside {
+   max-width: 100%; 
+   display:flex;
+   place-items: center;
+   
+}
+
+.p_formaz{
+display: flex;
+    flex-direction: row;    
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    }
+}
